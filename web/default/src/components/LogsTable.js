@@ -307,7 +307,7 @@ const LogsTable = () => {
 
   return (
     <>
-      <Segment>
+      <>
         <Header as='h3'>
           使用明细（总消耗额度：
           {showStat && renderQuota(stat.quota)}
@@ -388,7 +388,7 @@ const LogsTable = () => {
             </>
           )}
         </Form>
-        <Table basic compact size='small'>
+        <Table basic={'very'} compact size='small'>
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell
@@ -596,7 +596,7 @@ const LogsTable = () => {
             </Table.Row>
           </Table.Footer>
         </Table>
-      </Segment>
+      </>
     </>
   );
 };

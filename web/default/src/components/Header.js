@@ -116,14 +116,24 @@ const Header = () => {
               navigate(button.to);
               setShowSidebar(false);
             }}
+            style={{ fontSize: '15px' }}
           >
             {button.name}
           </Menu.Item>
         );
       }
       return (
-        <Menu.Item key={button.name} as={Link} to={button.to}>
-          <Icon name={button.icon} />
+        <Menu.Item
+          key={button.name}
+          as={Link}
+          to={button.to}
+          style={{
+            fontSize: '15px',
+            fontWeight: '400',
+            color: '#666',
+          }}
+        >
+          <Icon name={button.icon} style={{ marginRight: '4px' }} />
           {button.name}
         </Menu.Item>
       );
@@ -200,12 +210,25 @@ const Header = () => {
 
   return (
     <>
-      <Menu borderless style={{ borderTop: 'none' }}>
+      <Menu
+        borderless
+        style={{
+          borderTop: 'none',
+          boxShadow: 'rgba(0, 0, 0, 0.04) 0px 2px 12px 0px',
+          border: 'none',
+        }}
+      >
         <Container>
           <Menu.Item as={Link} to='/' className={'hide-on-mobile'}>
             <img src={logo} alt='logo' style={{ marginRight: '0.75em' }} />
-            <div style={{ fontSize: '20px' }}>
-              <b>{systemName}</b>
+            <div
+              style={{
+                fontSize: '18px',
+                fontWeight: '500',
+                color: '#333',
+              }}
+            >
+              {systemName}
             </div>
           </Menu.Item>
           {renderButtons(false)}
@@ -215,9 +238,22 @@ const Header = () => {
                 text={userState.user.username}
                 pointing
                 className='link item'
+                style={{
+                  fontSize: '15px',
+                  fontWeight: '400',
+                  color: '#666',
+                }}
               >
                 <Dropdown.Menu>
-                  <Dropdown.Item onClick={logout}>注销</Dropdown.Item>
+                  <Dropdown.Item
+                    onClick={logout}
+                    style={{
+                      fontSize: '15px',
+                      fontWeight: '400',
+                    }}
+                  >
+                    注销
+                  </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             ) : (
@@ -226,6 +262,11 @@ const Header = () => {
                 as={Link}
                 to='/login'
                 className='btn btn-link'
+                style={{
+                  fontSize: '15px',
+                  fontWeight: '400',
+                  color: '#666',
+                }}
               />
             )}
           </Menu.Menu>
