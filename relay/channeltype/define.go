@@ -49,5 +49,7 @@ const (
 	XAI
 	Replicate
 	BaiduV2
+	XunfeiV2
+	AliBailian
 	Dummy
 )
